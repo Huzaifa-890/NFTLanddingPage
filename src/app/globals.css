@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Define the standard colors and sizes for headings */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+
+    --primary-color: #fff;
+    --secondary-color: #BF4684;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+/* Font */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* TypoGraphy */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  letter-spacing: -1px;
+  color: black;
+}
+
+h2 {
+  font-size: clamp(3rem, 1.7vw, 1.7rem) !important;
+  font-weight: 500 !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.7px;
+  color: black;
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1rem);
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.9px;
+  line-height: 25px;
+}
+
+
+/* ScrollBar Start */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #00b5ff, #9747ff);
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent overlay color */
+  animation: blink 2s infinite;
+  /* Blinking effect with a duration of 2 seconds */
+}
+
+/* styles/globals.css */
+.perspective {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.heart-rate {
+  width: 150px;
+  height: 73px;
+  position: relative;
+  margin: 20px auto;
+}
+
+.fade-in {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  right: 0;
+  animation: heartRateIn 2.5s linear infinite;
+}
+
+.fade-out {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  right: -120%;
+  animation: heartRateOut 2.5s linear infinite;
+  background: rgba(0, 0, 0, 1);
+  background: linear-gradient(to right, rgba(0, 0, 0, 1)0%, rgba(0, 0, 0, 1)80%, rgba(0, 0, 0, 0)100%);
+}
+
+@keyframes heartRateIn {
+  0% {
+    width: 100%;
+  }
+
+  50% {
+    width: 0;
+  }
+
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes heartRateOut {
+  0% {
+    left: -120%;
+  }
+
+  30% {
+    left: -120%;
+  }
+
+  100% {
+    left: 0;
+  }
+
+}
+
+
+.flip-box {
+  width: 384px;
+  /* Consistent width for the box */
+  height: 460px;
+  /* Consistent height for the box */
+  perspective: 1000px;
+  /* 3D effect */
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front,
+.flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  color: black;
+}
+
+.flip-box-back {
+  background-color: #15bffd;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.gradient-border {
+  border: 4px solid transparent;
+  border-radius: 8px;
+  background-image: linear-gradient(white, white),
+    linear-gradient(90deg, #9C37FD, #15BFFD);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.clip-path-border {
+  border: 2px solid transparent;
+  /* background-image: linear-gradient(#000000, #000000),
+    linear-gradient(90deg, #00b5ff, #9747ff); */
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  /* clip-path: polygon(0 0, 98% 0, 100% 100%, 0% 100%); */
+}
